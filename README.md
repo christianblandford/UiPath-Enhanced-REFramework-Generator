@@ -13,4 +13,4 @@ https://go.uipath.com/component/enhanced-reframework-57011
 * Run `python -m uipath_scaffold` and select this generator when prompted
 * Follow remaining on-screen instructions
 
-[Screenshot of program](https://raw.githubusercontent.com/christianblandford/UiPath-Enhanced-REFramework-Generator/master/uipath_enhanced_reframework_generator.PNG)
+![Screenshot of program](https://raw.githubusercontent.com/christianblandford/UiPath-Enhanced-REFramework-Generator/master/uipath_enhanced_reframework_generator.PNG)
