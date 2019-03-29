@@ -3,8 +3,6 @@ from uipath_scaffold_generator import Generator, Functions
 import os, uipath, console_functions as terminal
 
 def __main__():
-	print("Hello world!")
-
 	#Set Up A Generator
 	enhanced_reframework_generator = Generator("UiPath Enhanced REFramework Generator", 
 		"Scaffolds a new Enhanced REFramework Project.", "https://github.com/mihhdu/Enhanced-REFramework/archive/master.zip", os.path.join("Workblock Snippet","wbTemplate.xaml"))
