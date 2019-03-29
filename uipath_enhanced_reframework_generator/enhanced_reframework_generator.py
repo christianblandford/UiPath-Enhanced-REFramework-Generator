@@ -1,6 +1,6 @@
 # A uipath-scaffold generator for UiPath Enhanced REFramework
 from uipath_scaffold_generator import Generator, Functions
-import os, uipath, console_functions as terminal
+import os, uipath, console_functions as console
 
 def __main__():
 	#Set Up A Generator
@@ -9,28 +9,28 @@ def __main__():
 
 	#Welcome to the generator
 	messages = ["Welcome to " + enhanced_reframework_generator.name + "!", "By Christian Blandford", "github: cblandford"]
-	terminal.header(messages, "yellow", "yellow", "=")
+	console.header(messages, "yellow", "yellow", "=")
 
 	supported_scaffolding_types = ["Project", "All Sequences", "Single Sequence"]
-	terminal.input("Please hit any key to choose the type of scaffolding you would like...", allow_empty=True)
-	scaffold_type = supported_scaffolding_types[terminal.input_list("Scaffolding type: ", supported_scaffolding_types)]
-	terminal.special(scaffold_type)
+	console.input("Please hit any key to choose the type of scaffolding you would like...", allow_empty=True)
+	scaffold_type = supported_scaffolding_types[console.input_list("Scaffolding type: ", supported_scaffolding_types)]
+	console.special(scaffold_type)
 
 	if scaffold_type == "Project":
 		enhanced_reframework_generator.scaffold_project()
 
-	should_scaffold_files = terminal.input("Would you like to scaffold out sequences now?", "Y")
-	if should_scaffold_files == "Y":
-		enhanced_reframework_generator.scaffold_seqeuences()
+		should_scaffold_files = console.input("Would you like to scaffold out sequences now?", "Y")
+		if should_scaffold_files == "Y":
+			enhanced_reframework_generator.scaffold_seqeuences()
 
-		should_pass_config = terminal.input("Would you like to sautomatically pass the config variable to all sequences?", "Y")
-		terminal.log("Okay, I will pass config to all sequences...")
-		if should_pass_config == "Y":
-			edit_scaffolded_files(enhanced_reframework_generator.files_created, True)
-		else:
-			edit_scaffolded_files(enhanced_reframework_generator.files_created, False)
+			should_pass_config = console.input("Would you like to automatically pass the config variable to all sequences?", "Y")
+			console.log("Okay, I will pass config to all sequences...")
+			if should_pass_config == "Y":
+				edit_scaffolded_files(enhanced_reframework_generator.files_created, True)
+			else:
+				edit_scaffolded_files(enhanced_reframework_generator.files_created, False)
 
-		console.log("Sequence scaffolding complete. Your project is ready!")
+			console.log("Sequence scaffolding complete. Your project is ready!")
 
 #Do the file manipulation for scaffolded files
 def edit_scaffolded_files(files_created, should_pass_config=False):
