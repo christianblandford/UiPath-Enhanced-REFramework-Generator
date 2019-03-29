@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="uipath_enhanced_reframework_generator",
-    version="0.0.3",
+    version="0.0.5",
     author="Christian Blandford",
     author_email="christianblandford@me.com",
     description="Generator to scaffold a new Enhanced REFramework project.",
